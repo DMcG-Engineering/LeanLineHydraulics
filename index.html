@@ -1,0 +1,842 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LeanLine Hydraulics & Pneumatics | Low-Cost Hydraulic & Pneumatic Solutions for NSW Industry</title>
+  <meta name="description" content="LeanLine Hydraulics & Pneumatics supplies low-cost hydraulic hoses, fittings, valves, motors and pneumatic components across NSW, Australia." />
+
+  <style>
+    :root {
+      --bg: #0d1117;
+      --bg-alt: #111827;
+      --card: #ffffff;
+      --accent: #2563eb;
+      --accent-soft: #dbeafe;
+      --text-main: #0f172a;
+      --text-muted: #6b7280;
+      --border: #e5e7eb;
+      --max-width: 1100px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: var(--bg);
+      color: var(--text-main);
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* Layout helpers */
+    .container {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 16px;
+    }
+
+    /* Header / Nav */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      background: rgba(15, 23, 42, 0.9);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(148, 163, 184, 0.25);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 16px;
+      max-width: var(--max-width);
+      margin: 0 auto;
+    }
+
+    .logo {
+      font-weight: 700;
+      font-size: 1.05rem;
+      color: #f9fafb;
+      letter-spacing: 0.03em;
+    }
+
+    .logo span {
+      color: var(--accent);
+    }
+
+    .tagline-small {
+      font-size: 0.7rem;
+      color: #9ca3af;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 18px;
+      font-size: 0.9rem;
+    }
+
+    nav a {
+      color: #e5e7eb;
+      padding: 6px 10px;
+      border-radius: 999px;
+      transition: background 0.15s ease, color 0.15s ease;
+    }
+
+    nav a:hover {
+      background: rgba(37, 99, 235, 0.1);
+      color: #ffffff;
+    }
+
+    /* Hero */
+    .hero {
+      background: radial-gradient(circle at top left, #1d4ed8 0, #0f172a 45%, #020617 100%);
+      color: #e5e7eb;
+      padding: 40px 0 50px;
+    }
+
+    .hero-inner {
+      display: grid;
+      grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
+      gap: 32px;
+      align-items: center;
+    }
+
+    .hero-title {
+      font-size: clamp(2rem, 3vw, 2.6rem);
+      font-weight: 800;
+      margin-bottom: 12px;
+      letter-spacing: 0.01em;
+    }
+
+    .hero-subtitle {
+      font-size: 1rem;
+      max-width: 32rem;
+      color: #cbd5f5;
+      margin-bottom: 18px;
+    }
+
+    .hero-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 20px;
+      font-size: 0.8rem;
+    }
+
+    .hero-badge {
+      background: rgba(15, 23, 42, 0.65);
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.5);
+      padding: 4px 10px;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      white-space: nowrap;
+    }
+
+    .hero-badge-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 999px;
+      background: #22c55e;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 24px;
+    }
+
+    .btn-primary,
+    .btn-secondary {
+      border-radius: 999px;
+      padding: 9px 18px;
+      font-size: 0.9rem;
+      font-weight: 500;
+      border: 1px solid transparent;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      color: #ffffff;
+      border-color: transparent;
+    }
+
+    .btn-primary:hover {
+      background: #1d4ed8;
+    }
+
+    .btn-secondary {
+      background: transparent;
+      color: #e5e7eb;
+      border-color: rgba(148, 163, 184, 0.7);
+    }
+
+    .btn-secondary:hover {
+      background: rgba(15, 23, 42, 0.7);
+    }
+
+    .hero-note {
+      font-size: 0.8rem;
+      color: #9ca3af;
+      max-width: 28rem;
+    }
+
+    .hero-card {
+      background: rgba(15, 23, 42, 0.92);
+      border-radius: 18px;
+      padding: 18px 16px 14px;
+      border: 1px solid rgba(148, 163, 184, 0.5);
+      font-size: 0.82rem;
+    }
+
+    .hero-card h3 {
+      color: #e5e7eb;
+      font-size: 0.95rem;
+      margin-bottom: 10px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 8px;
+    }
+
+    .hero-chip {
+      background: rgba(15, 23, 42, 0.7);
+      border-radius: 999px;
+      padding: 6px 9px;
+      border: 1px dashed rgba(148, 163, 184, 0.5);
+      text-align: center;
+    }
+
+    .hero-chip span {
+      display: block;
+      font-size: 0.78rem;
+      color: #cbd5f5;
+    }
+
+    /* Sections */
+    section {
+      padding: 40px 0;
+      background: #f9fafb;
+    }
+
+    section:nth-of-type(even) {
+      background: #eef2ff;
+    }
+
+    .section-header {
+      text-align: left;
+      margin-bottom: 20px;
+    }
+
+    .section-label {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--accent);
+      font-weight: 700;
+      margin-bottom: 3px;
+    }
+
+    .section-title {
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: 6px;
+      color: #0f172a;
+    }
+
+    .section-subtitle {
+      font-size: 0.92rem;
+      color: var(--text-muted);
+      max-width: 40rem;
+    }
+
+    /* Cards / grids */
+    .grid {
+      display: grid;
+      gap: 18px;
+    }
+
+    @media (min-width: 768px) {
+      .grid-2 {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+      .grid-3 {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+    }
+
+    .card {
+      background: var(--card);
+      border-radius: 14px;
+      border: 1px solid var(--border);
+      padding: 16px 16px 14px;
+      box-shadow: 0 8px 20px rgba(15, 23, 42, 0.03);
+    }
+
+    .card h3 {
+      font-size: 1rem;
+      margin-bottom: 6px;
+    }
+
+    .card p {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      margin-bottom: 8px;
+    }
+
+    .card ul {
+      padding-left: 18px;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    .pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 6px;
+    }
+
+    .pill {
+      font-size: 0.75rem;
+      padding: 3px 8px;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      color: #1e40af;
+      border: 1px solid #bfdbfe;
+      white-space: nowrap;
+    }
+
+    /* Contact section */
+    .contact-wrapper {
+      display: grid;
+      gap: 24px;
+    }
+
+    @media (min-width: 768px) {
+      .contact-wrapper {
+        grid-template-columns: 3fr 2fr;
+      }
+    }
+
+    form {
+      display: grid;
+      gap: 10px;
+      font-size: 0.9rem;
+    }
+
+    label {
+      font-weight: 500;
+      font-size: 0.85rem;
+      color: #111827;
+    }
+
+    input,
+    textarea {
+      width: 100%;
+      padding: 7px 9px;
+      border-radius: 8px;
+      border: 1px solid #d1d5db;
+      font-family: inherit;
+      font-size: 0.9rem;
+      outline: none;
+      transition: border-color 0.15s ease, box-shadow 0.15s ease;
+      background: #ffffff;
+    }
+
+    input:focus,
+    textarea:focus {
+      border-color: var(--accent);
+      box-shadow: 0 0 0 1px rgba(37, 99, 235, 0.35);
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 120px;
+    }
+
+    .helper-text {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      margin-top: 2px;
+    }
+
+    /* Footer */
+    footer {
+      background: #020617;
+      color: #9ca3af;
+      padding: 18px 0;
+      font-size: 0.78rem;
+    }
+
+    .footer-inner {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 10px;
+      align-items: center;
+    }
+
+    /* Responsive tweaks */
+    @media (max-width: 767px) {
+      .hero-inner {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      nav ul {
+        display: none; /* keep it simple on mobile – just scroll */
+      }
+
+      .hero {
+        padding-top: 26px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Header / Nav -->
+  <header>
+    <div class="nav">
+      <div>
+        <div class="logo">
+          <span>LeanLine</span> Hydraulics &amp; Pneumatics
+        </div>
+        <div class="tagline-small">
+          Low-Cost Hydraulic &amp; Pneumatic Solutions for NSW Industry
+        </div>
+      </div>
+      <nav aria-label="Main navigation">
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#hoses">Hoses</a></li>
+          <li><a href="#hydraulic">Hydraulics</a></li>
+          <li><a href="#pneumatic">Pneumatics</a></li>
+          <li><a href="#motors">Motors &amp; Drives</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#contact">Quote</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <main id="home">
+    <section class="hero">
+      <div class="container hero-inner">
+        <div>
+          <h1 class="hero-title">
+            Low-Cost Hydraulic &amp; Pneumatic Solutions for NSW Industry
+          </h1>
+          <p class="hero-subtitle">
+            LeanLine Hydraulics &amp; Pneumatics supplies made-to-order hydraulic hose assemblies,
+            loose fittings, valves, motors and pneumatic components for workshops, maintenance teams
+            and OEMs across NSW.
+          </p>
+
+          <div class="hero-badges">
+            <div class="hero-badge">
+              <span class="hero-badge-dot"></span> Hydraulic hoses &amp; fittings
+            </div>
+            <div class="hero-badge">Hydraulic valves &amp; motors</div>
+            <div class="hero-badge">Pneumatic fittings, cylinders &amp; FRLs</div>
+          </div>
+
+          <div class="hero-actions">
+            <a href="#contact" class="btn-primary">Request a Quote</a>
+            <a href="#hoses" class="btn-secondary">View Product Range</a>
+          </div>
+
+          <p class="hero-note">
+            Send us a photo, drawing or part number and we’ll help match the right hose, fittings
+            and components for your machine.
+          </p>
+        </div>
+
+        <aside class="hero-card">
+          <h3>What we supply</h3>
+          <div class="hero-grid">
+            <div class="hero-chip">
+              <strong>Hydraulic</strong>
+              <span>Hoses, fittings, valves, motors</span>
+            </div>
+            <div class="hero-chip">
+              <strong>Pneumatic</strong>
+              <span>Fittings, cylinders, FRLs, valves</span>
+            </div>
+            <div class="hero-chip">
+              <strong>Made-to-order</strong>
+              <span>Custom hose assemblies to spec</span>
+            </div>
+            <div class="hero-chip">
+              <strong>NSW-based</strong>
+              <span>Based in Randwick, servicing all NSW</span>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- Hoses -->
+    <section id="hoses">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-label">Hydraulic Hoses</div>
+          <h2 class="section-title">Made-to-Order Hydraulic Hose Assemblies</h2>
+          <p class="section-subtitle">
+            Bring your old hose, a drawing or your thread and length details. We build hose
+            assemblies to your specifications and also supply hose and fittings individually.
+          </p>
+        </div>
+
+        <div class="grid grid-2">
+          <article class="card">
+            <h3>Custom Hose Assemblies</h3>
+            <p>
+              We help you select the correct hose type, size and pressure rating for your
+              application, then crimp the matching ends ready for installation.
+            </p>
+            <ul>
+              <li>High-pressure braided and spiral hoses</li>
+              <li>Suction and return hose options</li>
+              <li>Assemblies built to exact length</li>
+              <li>Ideal for mobile and industrial hydraulics</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <h3>Hose &amp; Fittings Sold Individually</h3>
+            <p>
+              Prefer to make your own hoses? We supply loose hose, ferrules and hose ends so
+              you can assemble on your own equipment.
+            </p>
+            <ul>
+              <li>Loose hose by the metre</li>
+              <li>Ferrules for 1-wire, 2-wire and multi-spiral</li>
+              <li>BSP, JIC, ORFS, NPT, Metric hose ends</li>
+              <li>Straight, 45°, 90° and tee configurations</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Hydraulics -->
+    <section id="hydraulic">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-label">Hydraulic Components</div>
+          <h2 class="section-title">Hydraulic Fittings, Valves &amp; Motors</h2>
+          <p class="section-subtitle">
+            Everything from simple adapters through to control valves and hydraulic motors to keep
+            your machines moving.
+          </p>
+        </div>
+
+        <div class="grid grid-3">
+          <article class="card">
+            <h3>Hose Fittings &amp; Adapters</h3>
+            <p>
+              Carbon-steel fittings and adapters to suit common hydraulic thread standards used in
+              Australian industry.
+            </p>
+            <ul>
+              <li>BSP, JIC, ORFS, NPT and Metric threads</li>
+              <li>Straight, elbow and tee fittings</li>
+              <li>Bulkhead and reducer fittings</li>
+              <li>Caps and plugs for service and transport</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <h3>Hydraulic Valves</h3>
+            <p>
+              Control flow and pressure in your circuit with a range of directional and line-mounted
+              valves.
+            </p>
+            <ul>
+              <li>Directional control valves</li>
+              <li>Check and pilot-operated check valves</li>
+              <li>Flow control and needle valves</li>
+              <li>Relief and pressure control valves</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <h3>Hydraulic Motors</h3>
+            <p>
+              Low-speed, high-torque motors for driven equipment in agriculture, construction and
+              industrial applications.
+            </p>
+            <ul>
+              <li>Various displacements and speeds</li>
+              <li>Multiple mounting and shaft options</li>
+              <li>Suited to augers, conveyors, brushes and more</li>
+              <li>Matched to your flow and pressure</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pneumatics -->
+    <section id="pneumatic">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-label">Pneumatic Components</div>
+          <h2 class="section-title">Pneumatic Fittings, Cylinders &amp; Air Preparation</h2>
+          <p class="section-subtitle">
+            A complete pneumatics offering for factory automation, general machinery and industrial
+            air systems.
+          </p>
+        </div>
+
+        <div class="grid grid-3">
+          <article class="card">
+            <h3>Air Preparation (FRLs)</h3>
+            <p>
+              Protect downstream equipment and stabilise air pressure with filter, regulator and
+              lubricator units.
+            </p>
+            <ul>
+              <li>Filter–regulator combinations</li>
+              <li>Stand-alone filters and regulators</li>
+              <li>Lubricators for extended valve and tool life</li>
+              <li>Modular designs for flexible layouts</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <h3>Pneumatic Cylinders</h3>
+            <p>
+              Cylinders for automation and general industrial use, in a range of bore sizes and
+              strokes.
+            </p>
+            <ul>
+              <li>Standard ISO/profile cylinders</li>
+              <li>Compact and short-stroke options</li>
+              <li>Mounting hardware and rod accessories</li>
+              <li>Suitable for new builds and replacements</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <h3>Fittings, Tubing &amp; Valves</h3>
+            <p>
+              Build and control your air circuits with fittings, tube and directional control valves.
+            </p>
+            <ul>
+              <li>Push-in and threaded fittings</li>
+              <li>Polyurethane and nylon tubing</li>
+              <li>Solenoid and manual directional valves</li>
+              <li>Manifolds for compact valve banks</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Motors & Drives -->
+    <section id="motors">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-label">Motors &amp; Drives</div>
+          <h2 class="section-title">Hydraulic Motors &amp; Power Transmission</h2>
+          <p class="section-subtitle">
+            For rotating equipment and motion control, LeanLine can assist with hydraulic motors and
+            compatible drive components.
+          </p>
+        </div>
+
+        <div class="grid grid-2">
+          <article class="card">
+            <h3>Hydraulic Motor Selection Support</h3>
+            <p>
+              Tell us your required speed, torque and available flow and we can help identify a
+              suitable motor for your setup.
+            </p>
+            <ul>
+              <li>Low-speed high-torque applications</li>
+              <li>Mobile and industrial machinery</li>
+              <li>Integration with existing power packs</li>
+              <li>Options for a wide range of duties</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <h3>Integration with Gearboxes &amp; Drives</h3>
+            <p>
+              Where required, motors can be paired with appropriate gearboxes or couplings to match
+              your load and mounting constraints.
+            </p>
+            <ul>
+              <li>Consultation on torque and ratio requirements</li>
+              <li>Mounting and shaft configuration guidance</li>
+              <li>Support for OEM and retrofit projects</li>
+              <li>Focus on robust, practical solutions</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section id="about">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-label">About Us</div>
+          <h2 class="section-title">About LeanLine Hydraulics &amp; Pneumatics</h2>
+          <p class="section-subtitle">
+            LeanLine is a Randwick-based supplier focused on hydraulic and pneumatic components for
+            industry, agriculture and mobile equipment across NSW.
+          </p>
+        </div>
+
+        <div class="grid grid-2">
+          <article class="card">
+            <h3>Practical, Parts-First Support</h3>
+            <p>
+              We work directly with the people installing and maintaining equipment – mechanics,
+              fitters, technicians and fabricators – to make sure the parts you get are the parts
+              you actually need.
+            </p>
+            <ul>
+              <li>Help matching hoses, fittings and valves</li>
+              <li>Support for both breakdowns and new builds</li>
+              <li>Clear, straightforward communication</li>
+              <li>Flexible orders – from single parts to full kits</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <h3>Low-Cost, Reliable Components</h3>
+            <p>
+              Our focus is on providing reliable components at a competitive price point so you can
+              keep your machines working and projects on budget.
+            </p>
+            <ul>
+              <li>Cost-conscious options for OEMs and maintenance</li>
+              <li>Hydraulic and pneumatic product knowledge</li>
+              <li>Support for NSW workshops and sites</li>
+              <li>Responsive communication on product options</li>
+            </ul>
+          </article>
+        </div>
+
+        <div class="pill-row" style="margin-top: 12px;">
+          <span class="pill">Based in Randwick</span>
+          <span class="pill">Servicing all NSW</span>
+          <span class="pill">Hydraulics &amp; pneumatics</span>
+          <span class="pill">Low-cost component focus</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-label">Contact</div>
+          <h2 class="section-title">Request a Quote or Send a Parts List</h2>
+          <p class="section-subtitle">
+            Tell us what you’re working on – hoses, fittings, valves, motors or pneumatics – and
+            we’ll get back to you with pricing and options.
+          </p>
+        </div>
+
+        <div class="contact-wrapper">
+          <div class="card">
+            <!-- NOTE: replace the form "action" with your own handler or service -->
+            <form action="#" method="post">
+              <div>
+                <label for="name">Name</label>
+                <input id="name" name="name" type="text" required />
+              </div>
+
+              <div>
+                <label for="company">Company (optional)</label>
+                <input id="company" name="company" type="text" />
+              </div>
+
+              <div>
+                <label for="email">Email</label>
+                <input id="email" name="email" type="email" required />
+              </div>
+
+              <div>
+                <label for="phone">Phone (optional)</label>
+                <input id="phone" name="phone" type="tel" />
+              </div>
+
+              <div>
+                <label for="details">What do you need?</label>
+                <textarea id="details" name="details" required
+                  placeholder="Hose size &amp; length, fitting types, quantity, valve/motor details, etc."></textarea>
+                <p class="helper-text">
+                  You can describe the machine, application or send us part numbers to match.
+                </p>
+              </div>
+
+              <button type="submit" class="btn-primary">Send Request</button>
+              <p class="helper-text">
+                This form is a template. Ask your web host or developer to connect it to an email or
+                form service.
+              </p>
+            </form>
+          </div>
+
+          <div class="card">
+            <h3>Contact Details</h3>
+            <p>
+              Prefer to reach out directly? Get in touch with LeanLine Hydraulics &amp; Pneumatics
+              using the details below.
+            </p>
+            <ul>
+              <li><strong>Email:</strong> leanlinehydraulics@gmail.com</li>
+              <li><strong>Location:</strong> Randwick, NSW, Australia (servicing all NSW)</li>
+            </ul>
+            <p class="helper-text" style="margin-top: 10px;">
+              
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <div>© <span id="year"></span> LeanLine Hydraulics &amp; Pneumatics. All rights reserved.</div>
+      <div>Based in Randwick, servicing workshops, OEMs and maintenance teams across NSW.</div>
+    </div>
+  </footer>
+
+  <script>
+    // Set current year in footer
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
