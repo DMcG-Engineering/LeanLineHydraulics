@@ -1,0 +1,828 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LeanLine Engineering | CNC Machining & Precision Components</title>
+  <meta
+    name="description"
+    content="LeanLine Engineering provides CNC-machined precision components with optional anodising, passivating and other surface treatments for customers across NSW."
+  />
+
+  <style>
+    :root {
+      --bg: #0d1117;
+      --bg-alt: #111827;
+      --card: #ffffff;
+      --accent: #2563eb;
+      --accent-soft: #dbeafe;
+      --text-main: #0f172a;
+      --text-muted: #6b7280;
+      --border: #e5e7eb;
+      --max-width: 1100px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: var(--bg);
+      color: var(--text-main);
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .container {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 16px;
+    }
+
+    /* Header / Nav – consistent with main site, but with Engineering link */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      background: rgba(15, 23, 42, 0.9);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(148, 163, 184, 0.25);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 16px;
+      max-width: var(--max-width);
+      margin: 0 auto;
+    }
+
+    .logo {
+      font-weight: 700;
+      font-size: 1.05rem;
+      color: #f9fafb;
+      letter-spacing: 0.03em;
+    }
+
+    .logo span {
+      color: var(--accent);
+    }
+
+    .tagline-small {
+      font-size: 0.7rem;
+      color: #9ca3af;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 18px;
+      font-size: 0.9rem;
+    }
+
+    nav a {
+      color: #e5e7eb;
+      padding: 6px 10px;
+      border-radius: 999px;
+      transition: background 0.15s ease, color 0.15s ease;
+    }
+
+    nav a:hover {
+      background: rgba(37, 99, 235, 0.1);
+      color: #ffffff;
+    }
+
+    /* Hero */
+    .hero {
+      background: radial-gradient(circle at top left, #1d4ed8 0, #0f172a 45%, #020617 100%);
+      color: #e5e7eb;
+      padding: 40px 0 46px;
+    }
+
+    .hero-inner {
+      display: grid;
+      grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
+      gap: 32px;
+      align-items: center;
+    }
+
+    .hero-title {
+      font-size: clamp(2rem, 3vw, 2.6rem);
+      font-weight: 800;
+      margin-bottom: 12px;
+      letter-spacing: 0.01em;
+    }
+
+    .hero-subtitle {
+      font-size: 1rem;
+      max-width: 32rem;
+      color: #cbd5f5;
+      margin-bottom: 16px;
+    }
+
+    .hero-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 20px;
+      font-size: 0.8rem;
+    }
+
+    .hero-badge {
+      background: rgba(15, 23, 42, 0.65);
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.5);
+      padding: 4px 10px;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      white-space: nowrap;
+    }
+
+    .hero-badge-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 999px;
+      background: #22c55e;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+
+    .btn-primary,
+    .btn-secondary {
+      border-radius: 999px;
+      padding: 9px 18px;
+      font-size: 0.9rem;
+      font-weight: 500;
+      border: 1px solid transparent;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      color: #ffffff;
+      border-color: transparent;
+    }
+
+    .btn-primary:hover {
+      background: #1d4ed8;
+    }
+
+    .btn-secondary {
+      background: transparent;
+      color: #e5e7eb;
+      border-color: rgba(148, 163, 184, 0.7);
+    }
+
+    .btn-secondary:hover {
+      background: rgba(15, 23, 42, 0.7);
+    }
+
+    .hero-note {
+      font-size: 0.8rem;
+      color: #9ca3af;
+      max-width: 28rem;
+    }
+
+    .hero-card {
+      background: rgba(15, 23, 42, 0.92);
+      border-radius: 18px;
+      padding: 18px 16px 14px;
+      border: 1px solid rgba(148, 163, 184, 0.5);
+      font-size: 0.82rem;
+    }
+
+    .hero-card h3 {
+      color: #e5e7eb;
+      font-size: 0.95rem;
+      margin-bottom: 10px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 8px;
+    }
+
+    .hero-chip {
+      background: rgba(15, 23, 42, 0.7);
+      border-radius: 999px;
+      padding: 6px 9px;
+      border: 1px dashed rgba(148, 163, 184, 0.5);
+      text-align: center;
+    }
+
+    .hero-chip span {
+      display: block;
+      font-size: 0.78rem;
+      color: #cbd5f5;
+    }
+
+    /* Sections */
+    section {
+      padding: 40px 0;
+      background: #f9fafb;
+    }
+
+    section:nth-of-type(even) {
+      background: #eef2ff;
+    }
+
+    .section-header {
+      text-align: left;
+      margin-bottom: 20px;
+    }
+
+    .section-label {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--accent);
+      font-weight: 700;
+      margin-bottom: 3px;
+    }
+
+    .section-title {
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: 6px;
+      color: #0f172a;
+    }
+
+    .section-subtitle {
+      font-size: 0.92rem;
+      color: var(--text-muted);
+      max-width: 40rem;
+    }
+
+    /* Cards / grids */
+    .grid {
+      display: grid;
+      gap: 18px;
+    }
+
+    @media (min-width: 768px) {
+      .grid-2 {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+      .grid-3 {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+    }
+
+    .card {
+      background: var(--card);
+      border-radius: 14px;
+      border: 1px solid var(--border);
+      padding: 16px 16px 14px;
+      box-shadow: 0 8px 20px rgba(15, 23, 42, 0.03);
+    }
+
+    .card h3 {
+      font-size: 1rem;
+      margin-bottom: 6px;
+    }
+
+    .card p {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      margin-bottom: 8px;
+    }
+
+    .card ul {
+      padding-left: 18px;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    .pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 6px;
+    }
+
+    .pill {
+      font-size: 0.75rem;
+      padding: 3px 8px;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      color: #1e40af;
+      border: 1px solid #bfdbfe;
+      white-space: nowrap;
+    }
+
+    /* Contact section */
+    .contact-wrapper {
+      display: grid;
+      gap: 24px;
+    }
+
+    @media (min-width: 768px) {
+      .contact-wrapper {
+        grid-template-columns: 3fr 2fr;
+      }
+    }
+
+    form {
+      display: grid;
+      gap: 10px;
+      font-size: 0.9rem;
+    }
+
+    label {
+      font-weight: 500;
+      font-size: 0.85rem;
+      color: #111827;
+    }
+
+    input,
+    textarea {
+      width: 100%;
+      padding: 7px 9px;
+      border-radius: 8px;
+      border: 1px solid #d1d5db;
+      font-family: inherit;
+      font-size: 0.9rem;
+      outline: none;
+      transition: border-color 0.15s ease, box-shadow 0.15s ease;
+      background: #ffffff;
+    }
+
+    input:focus,
+    textarea:focus {
+      border-color: var(--accent);
+      box-shadow: 0 0 0 1px rgba(37, 99, 235, 0.35);
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 120px;
+    }
+
+    .helper-text {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      margin-top: 2px;
+    }
+
+    /* Footer */
+    footer {
+      background: #020617;
+      color: #9ca3af;
+      padding: 18px 0;
+      font-size: 0.78rem;
+    }
+
+    .footer-inner {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 10px;
+      align-items: center;
+    }
+
+    /* Responsive tweaks */
+    @media (max-width: 767px) {
+      .hero-inner {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      nav ul {
+        display: none;
+      }
+
+      .hero {
+        padding-top: 26px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Header / Nav -->
+  <header>
+    <div class="nav">
+      <div>
+        <div class="logo">
+          <span>LeanLine</span> Engineering
+        </div>
+        <div class="tagline-small">
+          CNC Machining &amp; Precision Components for NSW Industry
+        </div>
+      </div>
+      <nav aria-label="Main navigation">
+        <ul>
+          <li><a href="index.html#home">Hydraulics &amp; Pneumatics</a></li>
+          <li><a href="#home">Engineering Home</a></li>
+          <li><a href="#capabilities">Capabilities</a></li>
+          <li><a href="#materials">Materials &amp; Treatments</a></li>
+          <li><a href="#process">How We Work</a></li>
+          <li><a href="#contact">Quote</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <main id="home">
+    <section class="hero">
+      <div class="container hero-inner">
+        <div>
+          <h1 class="hero-title">
+            Precision CNC-Machined Parts with Surface Treatments Included
+          </h1>
+          <p class="hero-subtitle">
+            LeanLine Engineering supplies high-quality CNC-machined components, with options for anodising,
+            passivating and other surface treatments, for customers across NSW.
+          </p>
+
+          <div class="hero-badges">
+            <div class="hero-badge">
+              <span class="hero-badge-dot"></span> CNC turning &amp; milling
+            </div>
+            <div class="hero-badge">Tight tolerance machined parts</div>
+            <div class="hero-badge">Anodising, passivating &amp; more</div>
+          </div>
+
+          <div class="hero-actions">
+            <a href="#contact" class="btn-primary">Request a Machining Quote</a>
+            <a href="#capabilities" class="btn-secondary">View Capabilities</a>
+          </div>
+
+          <p class="hero-note">
+            Send us a drawing, STEP file or photo with key dimensions. We’ll help refine the design
+            for machining, confirm tolerances and include any required surface treatments in your quote.
+          </p>
+        </div>
+
+        <aside class="hero-card">
+          <h3>What LeanLine Engineering Offers</h3>
+          <div class="hero-grid">
+            <div class="hero-chip">
+              <strong>CNC Machining</strong>
+              <span>Turning &amp; milling of custom parts</span>
+            </div>
+            <div class="hero-chip">
+              <strong>Finishing</strong>
+              <span>Anodising, passivating, coatings</span>
+            </div>
+            <div class="hero-chip">
+              <strong>Fit-for-purpose</strong>
+              <span>Parts designed for real-world use</span>
+            </div>
+            <div class="hero-chip">
+              <strong>NSW-focused</strong>
+              <span>Local contact, global suppliers</span>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- Capabilities -->
+    <section id="capabilities">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-label">Capabilities</div>
+          <h2 class="section-title">CNC Machining for Prototypes and Production</h2>
+          <p class="section-subtitle">
+            LeanLine Engineering works with overseas CNC partners to supply machined parts while keeping
+            quoting, design conversations and support local in NSW.
+          </p>
+        </div>
+
+        <div class="grid grid-3">
+          <article class="card">
+            <h3>CNC Turning</h3>
+            <p>
+              Precision-turned components for hydraulic, pneumatic and general mechanical applications.
+            </p>
+            <ul>
+              <li>Shafts, spigots, spacers and bushings</li>
+              <li>Threaded adapters and custom fittings</li>
+              <li>Grooves, O-ring lands and shoulders</li>
+              <li>Suitable for low to medium production runs</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <h3>CNC Milling</h3>
+            <p>
+              Milled parts and plates for brackets, manifolds, mounting blocks and custom hardware.
+            </p>
+            <ul>
+              <li>Drilled and tapped hole patterns</li>
+              <li>Pockets, slots and counterbores</li>
+              <li>Simple 3D contours and features</li>
+              <li>Ideal for jigs, fixtures and small assemblies</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <h3>Assembly-Friendly Design</h3>
+            <p>
+              Parts are reviewed from an engineering perspective to help ensure they’re practical to
+              manufacture, assemble and use.
+            </p>
+            <ul>
+              <li>Advice on tolerances and fits</li>
+              <li>Suggestions to simplify machining</li>
+              <li>Focus on repeatability and robustness</li>
+              <li>Suited to real-world workshop conditions</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Materials & Treatments -->
+    <section id="materials">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-label">Materials &amp; Finishes</div>
+          <h2 class="section-title">Materials, Anodising, Passivating &amp; More</h2>
+          <p class="section-subtitle">
+            Parts can be supplied raw or with common surface treatments applied through our overseas
+            machining and finishing partners, depending on what the application requires.
+          </p>
+        </div>
+
+        <div class="grid grid-2">
+          <article class="card">
+            <h3>Common Materials</h3>
+            <p>
+              A selection of metals suited to hydraulic, pneumatic and general mechanical components.
+            </p>
+            <ul>
+              <li>Aluminium – ideal for lightweight components and manifolds</li>
+              <li>Mild steel – for brackets, flanges and structural parts</li>
+              <li>Stainless steel – for corrosion-resistant fittings and hardware</li>
+              <li>Engineering plastics (by request) – for guides, wear pads and covers</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <h3>Surface Treatments</h3>
+            <p>
+              Optional treatments can be included in your quote so parts arrive ready for use or final assembly.
+            </p>
+            <ul>
+              <li>Anodising (including colour options) for aluminium</li>
+              <li>Passivating for stainless steel components</li>
+              <li>Zinc and other protective coatings for steel parts</li>
+              <li>Additional treatments available on request, depending on the part</li>
+            </ul>
+          </article>
+        </div>
+
+        <div class="pill-row" style="margin-top: 12px;">
+          <span class="pill">Precision machined</span>
+          <span class="pill">Anodised &amp; coloured</span>
+          <span class="pill">Passivated stainless</span>
+          <span class="pill">Ready for assembly</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- How We Work -->
+    <section id="process">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-label">Process</div>
+          <h2 class="section-title">How LeanLine Engineering Works</h2>
+          <p class="section-subtitle">
+            A simple quoting and supply process that combines overseas machining capacity with local
+            engineering support in NSW.
+          </p>
+        </div>
+
+        <div class="grid grid-2">
+          <article class="card">
+            <h3>1. Share Your Drawings or Idea</h3>
+            <p>
+              Send us a drawing, STEP file, sketch or photo with key dimensions, material and any
+              special requirements.
+            </p>
+            <ul>
+              <li>We can work from formal drawings or clear sketches</li>
+              <li>Help refining tolerances and critical dimensions</li>
+              <li>Advice on making the part easier to machine</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <h3>2. We Source, You Deal Locally</h3>
+            <p>
+              We work with selected overseas machining partners to manufacture your parts, and
+              arrange delivery to you.
+            </p>
+            <ul>
+              <li>Parts produced by trusted CNC suppliers</li>
+              <li>Surface treatments included in the same quote</li>
+              <li>Some orders ship directly from the supplier to your site</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <h3>3. Transparent Lead Times &amp; Pricing</h3>
+            <p>
+              Before you commit, we’ll confirm pricing and estimated lead times based on quantity,
+              material and treatments.
+            </p>
+            <ul>
+              <li>Quotes that include machining and finishing</li>
+              <li>Clear on minimum order quantities where they apply</li>
+              <li>Updates provided if lead times change</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <h3>4. Local Support &amp; Follow-Up</h3>
+            <p>
+              If a part doesn’t arrive as expected, you contact LeanLine Engineering directly and we
+              handle it with our suppliers.
+            </p>
+            <ul>
+              <li>NSW-based point of contact</li>
+              <li>Support in line with Australian Consumer Law</li>
+              <li>Focus on long-term, repeat customers</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- About / Who You Deal With -->
+    <section id="about">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-label">About</div>
+          <h2 class="section-title">About LeanLine Engineering</h2>
+          <p class="section-subtitle">
+            LeanLine Engineering is the CNC machining side of LeanLine – focused on precision parts and
+            practical, application-driven design support.
+          </p>
+        </div>
+
+        <div class="grid grid-2">
+          <article class="card">
+            <h3>Engineer-Run CNC Supply</h3>
+            <p>
+              LeanLine Engineering is run by a mechanical design engineer with experience in automation,
+              fabrication and industrial projects. The goal is to bridge the gap between design intent
+              and what’s actually delivered from the machine shop.
+            </p>
+            <ul>
+              <li>Engineering-led review of your parts</li>
+              <li>Focus on fit, function and manufacturability</li>
+              <li>Comfortable talking in drawings, tolerances and fits</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <h3>Using Overseas Machining Partners</h3>
+            <p>
+              To keep costs sensible, we work with overseas CNC suppliers and finishing shops. Parts
+              are produced to your specifications, with LeanLine Engineering managing communication,
+              quality expectations and supply on your behalf.
+            </p>
+            <ul>
+              <li>Selected machining and finishing partners</li>
+              <li>Quotes include machining and treatments where needed</li>
+              <li>Local point of contact for any issues</li>
+            </ul>
+          </article>
+        </div>
+
+        <div class="pill-row" style="margin-top: 12px;">
+          <span class="pill">NSW-based contact</span>
+          <span class="pill">Overseas machining partners</span>
+          <span class="pill">Precision &amp; practicality</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-label">Contact</div>
+          <h2 class="section-title">Request a CNC Machining Quote</h2>
+          <p class="section-subtitle">
+            Share your drawing, model or idea and we’ll come back with pricing, lead time and
+            treatment options for your parts.
+          </p>
+        </div>
+
+        <div class="contact-wrapper">
+          <div class="card">
+            <form
+              action="https://formspree.io/f/xldqzwpn"
+              method="POST"
+            >
+              <!-- identify that this came from the Engineering page -->
+              <input type="hidden" name="service" value="LeanLine Engineering – CNC machining" />
+
+              <div>
+                <label for="name">Name</label>
+                <input id="name" name="name" type="text" required />
+              </div>
+
+              <div>
+                <label for="company">Company (optional)</label>
+                <input id="company" name="company" type="text" />
+              </div>
+
+              <div>
+                <label for="email">Email</label>
+                <input id="email" name="email" type="email" required />
+              </div>
+
+              <div>
+                <label for="phone">Phone (optional)</label>
+                <input id="phone" name="phone" type="tel" />
+              </div>
+
+              <div>
+                <label for="details">Part details</label>
+                <textarea
+                  id="details"
+                  name="details"
+                  required
+                  placeholder="Material, quantities, key dimensions/tolerances, surface treatment (e.g. black anodised, passivated), and any files you can email through."
+                ></textarea>
+                <p class="helper-text">
+                  You can also email drawings or STEP files directly to
+                  <strong>leanlinehydraulics@gmail.com</strong> and reference “LeanLine Engineering”.
+                </p>
+              </div>
+
+              <button type="submit" class="btn-primary">Send Request</button>
+              <p class="helper-text">
+                We’ll reply by email with pricing, options and estimated lead time before you confirm
+                your order.
+              </p>
+            </form>
+          </div>
+
+          <div class="card">
+            <h3>Contact Details</h3>
+            <p>
+              For questions about CNC machining, design tweaks or surface treatments, reach out using
+              the details below.
+            </p>
+            <ul>
+              <li><strong>Email:</strong> leanlinehydraulics@gmail.com</li>
+              <li><strong>Subject line:</strong> “LeanLine Engineering – CNC quote”</li>
+              <li><strong>Location:</strong> Randwick, NSW, Australia (servicing all NSW)</li>
+            </ul>
+            <p class="helper-text" style="margin-top: 10px;">
+              Components are supplied to suit your specifications. If anything doesn’t look right when
+              it arrives, contact us and we’ll work with you to sort it out in line with Australian
+              Consumer Law.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <div>
+        © <span id="year"></span> LeanLine Engineering.
+        <!-- Replace [ABN HERE] with your real ABN or company details when you have them -->
+        ABN: [ABN HERE]. All rights reserved.
+      </div>
+      <div>
+        CNC machining and finished components supplied to workshops, OEMs and maintenance teams across NSW.
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
