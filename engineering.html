@@ -3,11 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>LeanLine Engineering | CNC Machining & Precision Components</title>
-  <meta
-    name="description"
-    content="LeanLine Engineering provides CNC-machined precision components with optional anodising, passivating and other surface treatments for customers across NSW."
-  />
+  <title>LeanLine Engineering | CNC Machined Parts & Surface Treatments</title>
+  <meta name="description"
+        content="LeanLine Engineering supplies precision CNC-machined parts with anodising, passivation, powder coating and other surface treatments, using a trusted overseas manufacturing partner." />
 
   <style>
     :root {
@@ -50,23 +48,31 @@
       padding: 0 16px;
     }
 
-    /* Header / Nav – consistent with main site, but with Engineering link */
+    /* Header / Nav */
     header {
       position: sticky;
       top: 0;
       z-index: 20;
-      background: rgba(15, 23, 42, 0.9);
+      background: rgba(15, 23, 42, 0.95);
       backdrop-filter: blur(12px);
-      border-bottom: 1px solid rgba(148, 163, 184, 0.25);
+      border-bottom: 1px solid rgba(148, 163, 184, 0.35);
     }
 
     .nav {
       display: flex;
+      flex-wrap: wrap;              /* allow wrapping so it never forces the page wider */
       align-items: center;
       justify-content: space-between;
       padding: 10px 16px;
       max-width: var(--max-width);
       margin: 0 auto;
+      gap: 12px;
+    }
+
+    .nav-left {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
     }
 
     .logo {
@@ -85,10 +91,18 @@
       color: #9ca3af;
     }
 
+    .nav-right {
+      display: flex;
+      flex-wrap: wrap;            /* nav links + pill can wrap on smaller widths */
+      align-items: center;
+      gap: 16px;
+    }
+
     nav ul {
       list-style: none;
       display: flex;
-      gap: 18px;
+      flex-wrap: wrap;            /* key change: allow nav links to wrap */
+      gap: 10px 16px;
       font-size: 0.9rem;
     }
 
@@ -100,15 +114,36 @@
     }
 
     nav a:hover {
-      background: rgba(37, 99, 235, 0.1);
+      background: rgba(37, 99, 235, 0.18);
       color: #ffffff;
+    }
+
+    .nav-pill {
+      font-size: 0.85rem;
+      padding: 6px 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.8);
+      color: #e5e7eb;
+      background: rgba(15, 23, 42, 0.6);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      white-space: nowrap;
+    }
+
+    .nav-pill span {
+      display: inline-block;
+      width: 6px;
+      height: 6px;
+      border-radius: 999px;
+      background: #22c55e;
     }
 
     /* Hero */
     .hero {
       background: radial-gradient(circle at top left, #1d4ed8 0, #0f172a 45%, #020617 100%);
       color: #e5e7eb;
-      padding: 40px 0 46px;
+      padding: 40px 0 50px;
     }
 
     .hero-inner {
@@ -127,9 +162,9 @@
 
     .hero-subtitle {
       font-size: 1rem;
-      max-width: 32rem;
+      max-width: 34rem;
       color: #cbd5f5;
-      margin-bottom: 16px;
+      margin-bottom: 18px;
     }
 
     .hero-badges {
@@ -162,7 +197,7 @@
       display: flex;
       flex-wrap: wrap;
       gap: 12px;
-      margin-bottom: 20px;
+      margin-bottom: 24px;
     }
 
     .btn-primary,
@@ -176,12 +211,12 @@
       display: inline-flex;
       align-items: center;
       gap: 6px;
+      text-decoration: none;
     }
 
     .btn-primary {
       background: var(--accent);
       color: #ffffff;
-      border-color: transparent;
     }
 
     .btn-primary:hover {
@@ -201,7 +236,7 @@
     .hero-note {
       font-size: 0.8rem;
       color: #9ca3af;
-      max-width: 28rem;
+      max-width: 30rem;
     }
 
     .hero-card {
@@ -249,7 +284,6 @@
     }
 
     .section-header {
-      text-align: left;
       margin-bottom: 20px;
     }
 
@@ -272,10 +306,9 @@
     .section-subtitle {
       font-size: 0.92rem;
       color: var(--text-muted);
-      max-width: 40rem;
+      max-width: 42rem;
     }
 
-    /* Cards / grids */
     .grid {
       display: grid;
       gap: 18px;
@@ -285,6 +318,7 @@
       .grid-2 {
         grid-template-columns: repeat(2, minmax(0, 1fr));
       }
+
       .grid-3 {
         grid-template-columns: repeat(3, minmax(0, 1fr));
       }
@@ -332,7 +366,57 @@
       white-space: nowrap;
     }
 
-    /* Contact section */
+    .capability-list {
+      display: grid;
+      gap: 10px;
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      margin-top: 10px;
+    }
+
+    .capability-item strong {
+      display: block;
+      color: #111827;
+      margin-bottom: 2px;
+    }
+
+    .capability-item span {
+      display: block;
+    }
+
+    .helper-text {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      margin-top: 2px;
+    }
+
+    /* Standard offers table */
+    .offer-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 8px;
+      font-size: 0.84rem;
+    }
+
+    .offer-table th,
+    .offer-table td {
+      border: 1px solid #d1d5db;
+      padding: 6px 8px;
+      text-align: left;
+      vertical-align: top;
+    }
+
+    .offer-table th {
+      background: #e5edff;
+      font-weight: 600;
+      color: #111827;
+    }
+
+    .offer-table tr:nth-child(even) td {
+      background: #f3f4ff;
+    }
+
+    /* Contact / Forms */
     .contact-wrapper {
       display: grid;
       gap: 24px;
@@ -380,10 +464,10 @@
       min-height: 120px;
     }
 
-    .helper-text {
-      font-size: 0.8rem;
+    .policy-note {
+      font-size: 0.78rem;
       color: var(--text-muted);
-      margin-top: 2px;
+      margin-top: 10px;
     }
 
     /* Footer */
@@ -403,17 +487,17 @@
     }
 
     /* Responsive tweaks */
-    @media (max-width: 767px) {
+    @media (max-width: 900px) {
       .hero-inner {
         grid-template-columns: minmax(0, 1fr);
       }
 
-      nav ul {
-        display: none;
+      .nav {
+        justify-content: space-between;
       }
 
-      .hero {
-        padding-top: 26px;
+      nav ul {
+        display: none; /* simple mobile behaviour – only show cross-link pill */
       }
     }
   </style>
@@ -423,24 +507,33 @@
   <!-- Header / Nav -->
   <header>
     <div class="nav">
-      <div>
-        <div class="logo">
-          <span>LeanLine</span> Engineering
-        </div>
+      <div class="nav-left">
+        <div class="logo"><span>LeanLine</span> Engineering</div>
         <div class="tagline-small">
           CNC Machining &amp; Precision Components for NSW Industry
         </div>
       </div>
-      <nav aria-label="Main navigation">
-        <ul>
-          <li><a href="index.html#home">Hydraulics &amp; Pneumatics</a></li>
-          <li><a href="#home">Engineering Home</a></li>
-          <li><a href="#capabilities">Capabilities</a></li>
-          <li><a href="#materials">Materials &amp; Treatments</a></li>
-          <li><a href="#process">How We Work</a></li>
-          <li><a href="#contact">Quote</a></li>
-        </ul>
-      </nav>
+
+      <div class="nav-right">
+        <nav aria-label="Main navigation">
+          <ul>
+            <li><a href="index.html">Hydraulics &amp; Pneumatics</a></li>
+            <li><a href="#home">Engineering Home</a></li>
+            <li><a href="#capabilities">Capabilities</a></li>
+            <li><a href="#materials">Materials &amp; Tolerances</a></li>
+            <li><a href="#finishing">Surface Treatments</a></li>
+            <li><a href="#process">How We Work</a></li>
+            <li><a href="#next-steps">Next Steps</a></li>
+            <li><a href="#warranty">Warranty</a></li>
+            <li><a href="#contact">Quote</a></li>
+          </ul>
+        </nav>
+
+        <a href="index.html" class="nav-pill">
+          <span></span>
+          Hydraulic &amp; Pneumatic Parts
+        </a>
+      </div>
     </div>
   </header>
 
@@ -453,8 +546,9 @@
             Precision CNC-Machined Parts with Surface Treatments Included
           </h1>
           <p class="hero-subtitle">
-            LeanLine Engineering supplies high-quality CNC-machined components, with options for anodising,
-            passivating and other surface treatments, for customers across NSW.
+            LeanLine Engineering supplies high-quality CNC-machined components,
+            with options for anodising, passivation and other surface treatments,
+            delivered to you through a trusted overseas manufacturing partner.
           </p>
 
           <div class="hero-badges">
@@ -462,7 +556,8 @@
               <span class="hero-badge-dot"></span> CNC turning &amp; milling
             </div>
             <div class="hero-badge">Tight tolerance machined parts</div>
-            <div class="hero-badge">Anodising, passivating &amp; more</div>
+            <div class="hero-badge">Anodising, passivating &amp; coatings</div>
+            <div class="hero-badge">Prototype to low-volume production</div>
           </div>
 
           <div class="hero-actions">
@@ -471,8 +566,9 @@
           </div>
 
           <p class="hero-note">
-            Send us a drawing, STEP file or photo with key dimensions. We’ll help refine the design
-            for machining, confirm tolerances and include any required surface treatments in your quote.
+            Send us a drawing, STEP file or photo with key dimensions. We’ll help
+            refine the design for machining, confirm tolerances and include any
+            required surface treatments in your quote.
           </p>
         </div>
 
@@ -481,15 +577,15 @@
           <div class="hero-grid">
             <div class="hero-chip">
               <strong>CNC Machining</strong>
-              <span>Turning &amp; milling of custom parts</span>
-            </div>
-            <div class="hero-chip">
-              <strong>Finishing</strong>
-              <span>Anodising, passivating, coatings</span>
+              <span>Multi-axis milling &amp; turning for complex parts</span>
             </div>
             <div class="hero-chip">
               <strong>Fit-for-purpose</strong>
               <span>Parts designed for real-world use</span>
+            </div>
+            <div class="hero-chip">
+              <strong>Finishing</strong>
+              <span>Anodising, passivation, paint &amp; coatings</span>
             </div>
             <div class="hero-chip">
               <strong>NSW-focused</strong>
@@ -505,102 +601,238 @@
       <div class="container">
         <div class="section-header">
           <div class="section-label">Capabilities</div>
-          <h2 class="section-title">CNC Machining for Prototypes and Production</h2>
+          <h2 class="section-title">CNC Machining for Prototype &amp; Low-Volume Production</h2>
           <p class="section-subtitle">
-            LeanLine Engineering works with overseas CNC partners to supply machined parts while keeping
-            quoting, design conversations and support local in NSW.
+            Through our manufacturing partner we have access to modern CNC
+            milling and turning centres suitable for prototypes, jigs and
+            fixtures, and low-volume production runs.
           </p>
         </div>
 
         <div class="grid grid-3">
           <article class="card">
-            <h3>CNC Turning</h3>
-            <p>
-              Precision-turned components for hydraulic, pneumatic and general mechanical applications.
-            </p>
-            <ul>
-              <li>Shafts, spigots, spacers and bushings</li>
-              <li>Threaded adapters and custom fittings</li>
-              <li>Grooves, O-ring lands and shoulders</li>
-              <li>Suitable for low to medium production runs</li>
-            </ul>
-          </article>
-
-          <article class="card">
             <h3>CNC Milling</h3>
             <p>
-              Milled parts and plates for brackets, manifolds, mounting blocks and custom hardware.
+              Multi-axis CNC milling for parts with complex faces, pockets and
+              features. Ideal for housings, brackets, manifolds and covers.
             </p>
             <ul>
-              <li>Drilled and tapped hole patterns</li>
-              <li>Pockets, slots and counterbores</li>
-              <li>Simple 3D contours and features</li>
-              <li>Ideal for jigs, fixtures and small assemblies</li>
+              <li>High-precision machining on modern vertical and 5-axis mills</li>
+              <li>Suitable for aluminium, steels, copper alloys and plastics</li>
+              <li>Good for prototypes, jigs and low-volume batches</li>
+              <li>Machined directly from your 3D model and drawings</li>
             </ul>
           </article>
 
           <article class="card">
-            <h3>Assembly-Friendly Design</h3>
+            <h3>CNC Turning</h3>
             <p>
-              Parts are reviewed from an engineering perspective to help ensure they’re practical to
-              manufacture, assemble and use.
+              CNC turning for shafts, spacers, threaded adaptors and other
+              rotational parts, with grooves, radii and cross-holes as required.
             </p>
             <ul>
-              <li>Advice on tolerances and fits</li>
-              <li>Suggestions to simplify machining</li>
-              <li>Focus on repeatability and robustness</li>
-              <li>Suited to real-world workshop conditions</li>
+              <li>Standard and multi-axis turning options</li>
+              <li>Internal and external threads, grooves and undercuts</li>
+              <li>Ideal for hydraulic/pneumatic adaptors and bushings</li>
+              <li>Parts supplied finished and ready to assemble</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <h3>Rapid Prototyping &amp; Small Batches</h3>
+            <p>
+              When you’re proving out a new design, LeanLine can organise
+              fast-turn prototypes and short runs, including cosmetic finishes.
+            </p>
+            <ul>
+              <li>Concept and functional prototypes</li>
+              <li>Design feedback on manufacturability &amp; tolerances</li>
+              <li>Flexible order quantities – from single pieces upwards</li>
+              <li>Shipping coordinated directly to your workshop or site</li>
             </ul>
           </article>
         </div>
       </div>
     </section>
 
-    <!-- Materials & Treatments -->
+    <!-- Materials & Tolerances -->
     <section id="materials">
       <div class="container">
         <div class="section-header">
-          <div class="section-label">Materials &amp; Finishes</div>
-          <h2 class="section-title">Materials, Anodising, Passivating &amp; More</h2>
+          <div class="section-label">Materials &amp; Tolerances</div>
+          <h2 class="section-title">Industrial Materials with Tight, Practical Tolerances</h2>
           <p class="section-subtitle">
-            Parts can be supplied raw or with common surface treatments applied through our overseas
-            machining and finishing partners, depending on what the application requires.
+            Material choice and tolerancing are key to parts that fit, seal and
+            last. LeanLine Engineering can help select from common engineering
+            metals and plastics, and apply sensible tolerances that balance
+            performance and cost.
           </p>
         </div>
 
         <div class="grid grid-2">
           <article class="card">
-            <h3>Common Materials</h3>
+            <h3>Metals &amp; Plastics</h3>
             <p>
-              A selection of metals suited to hydraulic, pneumatic and general mechanical components.
+              A broad range of machinable metals and plastics are available for
+              CNC milling and turning.
             </p>
-            <ul>
-              <li>Aluminium – ideal for lightweight components and manifolds</li>
-              <li>Mild steel – for brackets, flanges and structural parts</li>
-              <li>Stainless steel – for corrosion-resistant fittings and hardware</li>
-              <li>Engineering plastics (by request) – for guides, wear pads and covers</li>
-            </ul>
+            <div class="capability-list">
+              <div class="capability-item">
+                <strong>Metals</strong>
+                <span>
+                  Aluminium and alloys, carbon &amp; stainless steels, brass,
+                  copper, titanium and bronze for structural and fluid-power
+                  parts.
+                </span>
+              </div>
+              <div class="capability-item">
+                <strong>Plastics</strong>
+                <span>
+                  ABS, PEEK, polycarbonate, nylon and other engineering plastics
+                  where weight, chemical resistance or electrical isolation are
+                  important.
+                </span>
+              </div>
+              <div class="capability-item">
+                <strong>Matching to Service</strong>
+                <span>
+                  We can recommend materials for pressure, temperature and
+                  corrosion requirements in your application.
+                </span>
+              </div>
+            </div>
           </article>
 
           <article class="card">
-            <h3>Surface Treatments</h3>
+            <h3>Tolerance Approach</h3>
             <p>
-              Optional treatments can be included in your quote so parts arrive ready for use or final assembly.
+              Not every surface needs the same level of accuracy. We focus tight
+              tolerances where they matter – seal lands, bores, shaft fits and
+              mounting interfaces – and relax non-critical faces to keep costs
+              controlled.
             </p>
             <ul>
-              <li>Anodising (including colour options) for aluminium</li>
-              <li>Passivating for stainless steel components</li>
-              <li>Zinc and other protective coatings for steel parts</li>
-              <li>Additional treatments available on request, depending on the part</li>
+              <li>
+                Tight machining on critical features where fits and sealing are
+                important.
+              </li>
+              <li>
+                General surfaces guided by standard machining tolerances for
+                cost-effective production.
+              </li>
+              <li>
+                Tolerance review as part of quoting – we’ll flag dimensions that
+                may drive cost or risk.
+              </li>
+              <li>
+                Inspection reports available on request for key dimensions.
+              </li>
             </ul>
           </article>
         </div>
 
-        <div class="pill-row" style="margin-top: 12px;">
-          <span class="pill">Precision machined</span>
-          <span class="pill">Anodised &amp; coloured</span>
-          <span class="pill">Passivated stainless</span>
-          <span class="pill">Ready for assembly</span>
+        <!-- Standard offers table -->
+        <div class="card" style="margin-top:16px;">
+          <h3>Standard Offers (Typical Setups)</h3>
+          <p>
+            These are common combinations we can supply quickly. They’re a good
+            starting point if you’re not sure exactly what to request.
+          </p>
+          <table class="offer-table">
+            <thead>
+              <tr>
+                <th>Material</th>
+                <th>Typical Finish</th>
+                <th>Typical Use</th>
+                <th>Indicative Lead Time*</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Aluminium 6061 / 6082</td>
+                <td>Clear or black anodised</td>
+                <td>Brackets, covers, manifolds, light structural parts</td>
+                <td>Approx. 3–5 weeks from order</td>
+              </tr>
+              <tr>
+                <td>Stainless Steel 304 / 316</td>
+                <td>As machined or passivated</td>
+                <td>Process fittings, food/chemical parts, hardware exposed to weather</td>
+                <td>Approx. 4–6 weeks from order</td>
+              </tr>
+              <tr>
+                <td>Mild / Carbon Steel</td>
+                <td>Powder coat, paint or plating</td>
+                <td>Frames, mounting plates, brackets, general mechanical parts</td>
+                <td>Approx. 3–5 weeks from order</td>
+              </tr>
+              <tr>
+                <td>Engineering Plastics (e.g. nylon, PEEK, PC)</td>
+                <td>As machined</td>
+                <td>Wear strips, insulators, light-duty housings, prototype components</td>
+                <td>Approx. 3–5 weeks from order</td>
+              </tr>
+            </tbody>
+          </table>
+          <p class="helper-text">
+            *Lead times are indicative only and depend on part complexity, quantity,
+            finishing and freight. We’ll confirm actual lead times with every quote.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Surface Finishing -->
+    <section id="finishing">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-label">Surface Treatments</div>
+          <h2 class="section-title">Finishing Options for Corrosion Protection &amp; Appearance</h2>
+          <p class="section-subtitle">
+            Parts can be supplied “as machined” or with a range of finishing
+            processes to improve corrosion resistance, wear life and appearance.
+          </p>
+        </div>
+
+        <div class="grid grid-3">
+          <article class="card">
+            <h3>Anodising &amp; Passivation</h3>
+            <p>
+              For aluminium and stainless components that need protection and a
+              clean, consistent appearance.
+            </p>
+            <ul>
+              <li>Decorative and hard anodising in a range of colours</li>
+              <li>Passivation of stainless steels to boost corrosion resistance</li>
+              <li>Suitable for covers, brackets, manifolds and decorative parts</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <h3>Coatings &amp; Plating</h3>
+            <p>
+              Coatings improve appearance and protect against abrasion,
+              corrosion and handling damage.
+            </p>
+            <ul>
+              <li>Powder coating and wet painting in various colours</li>
+              <li>Electroplating options such as nickel or chrome</li>
+              <li>Black oxide on suitable steels for a low-glare finish</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <h3>Preparation &amp; Heat Treatment</h3>
+            <p>
+              Additional processes are available where strength or surface
+              texture are important.
+            </p>
+            <ul>
+              <li>Media blasting and brushing for consistent matte surfaces</li>
+              <li>Polishing for smooth, highly finished surfaces</li>
+              <li>Heat treatment for steels where hardness or strength is needed</li>
+            </ul>
+          </article>
         </div>
       </div>
     </section>
@@ -612,114 +844,199 @@
           <div class="section-label">Process</div>
           <h2 class="section-title">How LeanLine Engineering Works</h2>
           <p class="section-subtitle">
-            A simple quoting and supply process that combines overseas machining capacity with local
-            engineering support in NSW.
+            The goal is to keep your workflow simple: you deal with a local
+            contact, while we coordinate machining and finishing with our
+            partner factory.
           </p>
         </div>
 
         <div class="grid grid-2">
           <article class="card">
-            <h3>1. Share Your Drawings or Idea</h3>
-            <p>
-              Send us a drawing, STEP file, sketch or photo with key dimensions, material and any
-              special requirements.
-            </p>
+            <h3>1. Define &amp; Quote</h3>
             <ul>
-              <li>We can work from formal drawings or clear sketches</li>
-              <li>Help refining tolerances and critical dimensions</li>
-              <li>Advice on making the part easier to machine</li>
+              <li>You send drawings, 3D models and any tolerance notes.</li>
+              <li>
+                We review material, tolerances and finishes and come back with
+                questions if needed.
+              </li>
+              <li>
+                You receive a quote including machining, finishing and freight
+                to your address in NSW.
+              </li>
             </ul>
           </article>
 
           <article class="card">
-            <h3>2. We Source, You Deal Locally</h3>
-            <p>
-              We work with selected overseas machining partners to manufacture your parts, and
-              arrange delivery to you.
-            </p>
+            <h3>2. Manufacture &amp; Delivery</h3>
             <ul>
-              <li>Parts produced by trusted CNC suppliers</li>
-              <li>Surface treatments included in the same quote</li>
-              <li>Some orders ship directly from the supplier to your site</li>
+              <li>
+                Parts are machined and finished at our partner factory using
+                modern CNC equipment.
+              </li>
+              <li>
+                Inspection is carried out on critical dimensions; reports can be
+                provided on request.
+              </li>
+              <li>
+                Shipments are consolidated and delivered directly to your
+                workshop, site or customer.
+              </li>
+            </ul>
+          </article>
+        </div>
+
+        <div class="pill-row" style="margin-top: 12px;">
+          <span class="pill">Local contact, global machining</span>
+          <span class="pill">Prototype &amp; low-volume friendly</span>
+          <span class="pill">Surface treatments included</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Next Steps -->
+    <section id="next-steps">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-label">Next Steps</div>
+          <h2 class="section-title">What to Do If You’d Like a Quote</h2>
+          <p class="section-subtitle">
+            If you have parts in mind already, the steps below will help make
+            quoting quick and accurate.
+          </p>
+        </div>
+
+        <div class="grid grid-2">
+          <article class="card">
+            <h3>For New Parts or Prototypes</h3>
+            <ul>
+              <li>Export or save your 3D model (STEP/IGES) and 2D drawing (PDF).</li>
+              <li>Note materials, quantities and any special tolerances.</li>
+              <li>Decide what surface treatment you want (e.g. anodised black).</li>
+              <li>
+                Send everything through using the form below or directly by
+                email.
+              </li>
             </ul>
           </article>
 
           <article class="card">
-            <h3>3. Transparent Lead Times &amp; Pricing</h3>
-            <p>
-              Before you commit, we’ll confirm pricing and estimated lead times based on quantity,
-              material and treatments.
-            </p>
+            <h3>For Existing Parts or Reverse Engineering</h3>
             <ul>
-              <li>Quotes that include machining and finishing</li>
-              <li>Clear on minimum order quantities where they apply</li>
-              <li>Updates provided if lead times change</li>
-            </ul>
-          </article>
-
-          <article class="card">
-            <h3>4. Local Support &amp; Follow-Up</h3>
-            <p>
-              If a part doesn’t arrive as expected, you contact LeanLine Engineering directly and we
-              handle it with our suppliers.
-            </p>
-            <ul>
-              <li>NSW-based point of contact</li>
-              <li>Support in line with Australian Consumer Law</li>
-              <li>Focus on long-term, repeat customers</li>
+              <li>
+                Take clear photos of the part, including any critical features.
+              </li>
+              <li>
+                Measure key dimensions (overall size, hole centres, threads,
+                thicknesses).
+              </li>
+              <li>
+                Tell us what the part does and where it fits so we can sanity
+                check the design.
+              </li>
+              <li>
+                We’ll advise whether a simple sketch is enough or if we need a
+                full drawing or 3D model.
+              </li>
             </ul>
           </article>
         </div>
       </div>
     </section>
 
-    <!-- About / Who You Deal With -->
-    <section id="about">
+    <!-- Warranty & Returns -->
+    <section id="warranty">
       <div class="container">
         <div class="section-header">
-          <div class="section-label">About</div>
-          <h2 class="section-title">About LeanLine Engineering</h2>
+          <div class="section-label">Warranty &amp; Returns</div>
+          <h2 class="section-title">Summary of Warranty &amp; Return Policy for Machined Parts</h2>
           <p class="section-subtitle">
-            LeanLine Engineering is the CNC machining side of LeanLine – focused on precision parts and
-            practical, application-driven design support.
+            Custom-machined parts are made specifically to your drawings and
+            specifications. The policy below is a plain-language summary of how
+            LeanLine Engineering handles issues with workmanship. It is not
+            formal legal advice – you should adapt and confirm the final wording
+            with your own advisor before publishing terms and conditions.
           </p>
         </div>
 
         <div class="grid grid-2">
           <article class="card">
-            <h3>Engineer-Run CNC Supply</h3>
-            <p>
-              LeanLine Engineering is run by a mechanical design engineer with experience in automation,
-              fabrication and industrial projects. The goal is to bridge the gap between design intent
-              and what’s actually delivered from the machine shop.
-            </p>
+            <h3>Warranty Summary</h3>
             <ul>
-              <li>Engineering-led review of your parts</li>
-              <li>Focus on fit, function and manufacturability</li>
-              <li>Comfortable talking in drawings, tolerances and fits</li>
+              <li>
+                <strong>Scope.</strong> We warrant that parts supplied by
+                LeanLine Engineering will be manufactured to the agreed drawings
+                and specifications, using the agreed materials and finishes.
+              </li>
+              <li>
+                <strong>Duration.</strong> The warranty applies for
+                <em>12 months from the date of delivery</em> for defects in
+                workmanship or material that existed at the time of supply.
+              </li>
+              <li>
+                <strong>What is covered.</strong> Dimensional errors,
+                machining/finishing defects or incorrect material supplied
+                where we are responsible.
+              </li>
+              <li>
+                <strong>What is not covered.</strong> Design errors in customer
+                drawings or models, incorrect or incomplete information supplied
+                to us, normal wear, corrosion from service environment,
+                accidental damage, misuse, modification, or installation that
+                doesn’t follow good engineering practice.
+              </li>
+              <li>
+                <strong>Remedy.</strong> Our obligation under this warranty is
+                limited, at our option, to repair, rework, or remake the
+                affected parts, or to credit or refund the original invoice
+                value of those parts. We are not responsible for consequential
+                or indirect losses (downtime, lost production, etc.).
+              </li>
             </ul>
           </article>
 
           <article class="card">
-            <h3>Using Overseas Machining Partners</h3>
-            <p>
-              To keep costs sensible, we work with overseas CNC suppliers and finishing shops. Parts
-              are produced to your specifications, with LeanLine Engineering managing communication,
-              quality expectations and supply on your behalf.
-            </p>
+            <h3>Returns &amp; Non-Conformance</h3>
             <ul>
-              <li>Selected machining and finishing partners</li>
-              <li>Quotes include machining and treatments where needed</li>
-              <li>Local point of contact for any issues</li>
+              <li>
+                <strong>Custom parts – no change-of-mind returns.</strong>
+                Because machining work is made-to-order, we cannot accept
+                returns where requirements change after production or where
+                parts are no longer required.
+              </li>
+              <li>
+                <strong>Notifying an issue.</strong> If you believe there is a
+                problem with workmanship, notify us within
+                <em>7–14 days of delivery</em> (set your preferred timeframe)
+                with photos, a description of the problem and the
+                relevant drawings.
+              </li>
+              <li>
+                <strong>Inspection process.</strong> We may request that parts
+                are returned for inspection. We will issue a return number and
+                shipping instructions where necessary.
+              </li>
+              <li>
+                <strong>If we are at fault.</strong> If inspection confirms a
+                manufacturing or finishing issue, we will repair, rework or
+                remake the parts at our cost, or apply a credit/refund, and we
+                will cover reasonable return freight.
+              </li>
+              <li>
+                <strong>If the issue is design or information related.</strong>
+                Where the issue arises from the drawing/model, specification or
+                information supplied to us, we will advise options and can quote
+                to rework or remake parts based on corrected information.
+              </li>
             </ul>
           </article>
         </div>
 
-        <div class="pill-row" style="margin-top: 12px;">
-          <span class="pill">NSW-based contact</span>
-          <span class="pill">Overseas machining partners</span>
-          <span class="pill">Precision &amp; practicality</span>
-        </div>
+        <p class="policy-note">
+          This section is a practical summary only and does not replace formal
+          terms and conditions of sale. Before you rely on it, have a qualified
+          professional review and tailor the wording for your business and
+          jurisdiction.
+        </p>
       </div>
     </section>
 
@@ -728,22 +1045,18 @@
       <div class="container">
         <div class="section-header">
           <div class="section-label">Contact</div>
-          <h2 class="section-title">Request a CNC Machining Quote</h2>
+          <h2 class="section-title">Request a Machining Quote</h2>
           <p class="section-subtitle">
-            Share your drawing, model or idea and we’ll come back with pricing, lead time and
-            treatment options for your parts.
+            Tell us what you need machined – material, quantity, required
+            finish and any special tolerances – and we’ll come back with options
+            and pricing.
           </p>
         </div>
 
         <div class="contact-wrapper">
           <div class="card">
-            <form
-              action="https://formspree.io/f/xldqzwpn"
-              method="POST"
-            >
-              <!-- identify that this came from the Engineering page -->
-              <input type="hidden" name="service" value="LeanLine Engineering – CNC machining" />
-
+            <!-- Plug your Formspree or other form handler into "action" -->
+            <form action="#" method="post">
               <div>
                 <label for="name">Name</label>
                 <input id="name" name="name" type="text" required />
@@ -765,23 +1078,19 @@
               </div>
 
               <div>
-                <label for="details">Part details</label>
-                <textarea
-                  id="details"
-                  name="details"
-                  required
-                  placeholder="Material, quantities, key dimensions/tolerances, surface treatment (e.g. black anodised, passivated), and any files you can email through."
-                ></textarea>
+                <label for="details">Project details</label>
+                <textarea id="details" name="details" required
+                  placeholder="Material, quantity, key dimensions, tolerances, surface treatment, required delivery date..."></textarea>
                 <p class="helper-text">
-                  You can also email drawings or STEP files directly to
-                  <strong>leanlinehydraulics@gmail.com</strong> and reference “LeanLine Engineering”.
+                  Attach or reference any drawings or 3D models when you reply
+                  to our quote email.
                 </p>
               </div>
 
               <button type="submit" class="btn-primary">Send Request</button>
               <p class="helper-text">
-                We’ll reply by email with pricing, options and estimated lead time before you confirm
-                your order.
+                This form is a template – connect it to your email or form
+                service (for example Formspree) to receive enquiries.
               </p>
             </form>
           </div>
@@ -789,19 +1098,14 @@
           <div class="card">
             <h3>Contact Details</h3>
             <p>
-              For questions about CNC machining, design tweaks or surface treatments, reach out using
-              the details below.
+              Prefer to reach out directly? Get in touch with LeanLine
+              Engineering using the details below.
             </p>
             <ul>
               <li><strong>Email:</strong> leanlinehydraulics@gmail.com</li>
-              <li><strong>Subject line:</strong> “LeanLine Engineering – CNC quote”</li>
-              <li><strong>Location:</strong> Randwick, NSW, Australia (servicing all NSW)</li>
+              <li><strong>Location:</strong> Randwick, NSW, Australia</li>
+              <li><strong>Service area:</strong> Workshops, OEMs and projects across NSW</li>
             </ul>
-            <p class="helper-text" style="margin-top: 10px;">
-              Components are supplied to suit your specifications. If anything doesn’t look right when
-              it arrives, contact us and we’ll work with you to sort it out in line with Australian
-              Consumer Law.
-            </p>
           </div>
         </div>
       </div>
@@ -810,14 +1114,8 @@
 
   <footer>
     <div class="container footer-inner">
-      <div>
-        © <span id="year"></span> LeanLine Engineering.
-        <!-- Replace [ABN HERE] with your real ABN or company details when you have them -->
-        ABN: [ABN HERE]. All rights reserved.
-      </div>
-      <div>
-        CNC machining and finished components supplied to workshops, OEMs and maintenance teams across NSW.
-      </div>
+      <div>© <span id="year"></span> LeanLine Engineering. All rights reserved.</div>
+      <div>Based in Randwick, servicing workshops and projects across NSW.</div>
     </div>
   </footer>
 
