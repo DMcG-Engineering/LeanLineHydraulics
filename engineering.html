@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>LeanLine Engineering | CNC Machined Parts & Surface Treatments</title>
   <meta name="description"
-        content="LeanLine Engineering supplies precision CNC-machined parts with anodising, passivation, powder coating and other surface treatments, using a trusted overseas manufacturing partner." />
+        content="LeanLine Engineering supplies precision CNC-machined parts with anodising, passivation, coatings and other surface treatments, using a trusted overseas manufacturing partner." />
 
   <style>
     :root {
@@ -48,19 +48,21 @@
       padding: 0 16px;
     }
 
-    /* Header / Nav */
+    /* ===========================
+       HEADER / NAV – same as hydraulics page
+       =========================== */
     header {
       position: sticky;
       top: 0;
       z-index: 20;
-      background: rgba(15, 23, 42, 0.95);
+      background: rgba(15, 23, 42, 0.97);
       backdrop-filter: blur(12px);
       border-bottom: 1px solid rgba(148, 163, 184, 0.35);
     }
 
     .nav {
       display: flex;
-      flex-wrap: wrap;              /* allow wrapping so it never forces the page wider */
+      flex-wrap: wrap;              /* allow wrapping – prevents overflow */
       align-items: center;
       justify-content: space-between;
       padding: 10px 16px;
@@ -71,36 +73,49 @@
 
     .nav-left {
       display: flex;
-      flex-direction: row;
       align-items: center;
-      gap: 10px;
+      gap: 14px;
     }
 
-    .nav-logo-img {
-      width: 80px;
-      height: auto;
+    .nav-logo-block {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .nav-logo-image {
+      height: 56px;                 /* same size as hydraulics page */
+      width: auto;
       display: block;
     }
 
-    .logo {
+    .nav-logo-text {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .nav-logo-title {
       font-weight: 700;
       font-size: 1.05rem;
       color: #f9fafb;
       letter-spacing: 0.03em;
+      white-space: nowrap;
     }
 
-    .logo span {
-      color: var(--accent);
+    .nav-logo-title span {
+      color: var(--accent);         /* blue “LeanLine” */
     }
 
-    .tagline-small {
-      font-size: 0.7rem;
+    .nav-logo-tagline {
+      font-size: 0.75rem;
       color: #9ca3af;
+      white-space: nowrap;
     }
 
     .nav-right {
       display: flex;
-      flex-wrap: wrap;            /* nav links + pill can wrap on smaller widths */
+      flex-wrap: wrap;              /* let nav list + pill wrap instead of stretching page */
       align-items: center;
       gap: 16px;
     }
@@ -108,7 +123,7 @@
     nav ul {
       list-style: none;
       display: flex;
-      flex-wrap: wrap;            /* allow nav links to wrap */
+      flex-wrap: wrap;              /* links can wrap on smaller widths */
       gap: 10px 16px;
       font-size: 0.9rem;
     }
@@ -118,6 +133,7 @@
       padding: 6px 10px;
       border-radius: 999px;
       transition: background 0.15s ease, color 0.15s ease;
+      white-space: nowrap;
     }
 
     nav a:hover {
@@ -146,7 +162,24 @@
       background: #22c55e;
     }
 
-    /* Hero */
+    /* Mobile behaviour – same as hydraulics page */
+    @media (max-width: 900px) {
+      .nav {
+        justify-content: space-between;
+      }
+
+      nav ul {
+        display: none;  /* hide the long menu, keep logo + pill */
+      }
+
+      .nav-logo-tagline {
+        display: none;
+      }
+    }
+
+    /* ==============
+       HERO
+       ============== */
     .hero {
       background: radial-gradient(circle at top left, #1d4ed8 0, #0f172a 45%, #020617 100%);
       color: #e5e7eb;
@@ -280,7 +313,9 @@
       color: #cbd5f5;
     }
 
-    /* Sections */
+    /* ==============
+       GENERIC SECTIONS
+       ============== */
     section {
       padding: 40px 0;
       background: #f9fafb;
@@ -387,17 +422,6 @@
       margin-bottom: 2px;
     }
 
-    .capability-item span {
-      display: block;
-    }
-
-    .helper-text {
-      font-size: 0.8rem;
-      color: var(--text-muted);
-      margin-top: 2px;
-    }
-
-    /* Standard offers table */
     .offer-table {
       width: 100%;
       border-collapse: collapse;
@@ -423,7 +447,12 @@
       background: #f3f4ff;
     }
 
-    /* Contact / Forms */
+    .helper-text {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      margin-top: 2px;
+    }
+
     .contact-wrapper {
       display: grid;
       gap: 24px;
@@ -477,7 +506,7 @@
       margin-top: 10px;
     }
 
-    /* Footer */
+    /* FOOTER */
     footer {
       background: #020617;
       color: #9ca3af;
@@ -493,35 +522,28 @@
       align-items: center;
     }
 
-    /* Responsive tweaks */
     @media (max-width: 900px) {
       .hero-inner {
         grid-template-columns: minmax(0, 1fr);
-      }
-
-      .nav {
-        justify-content: space-between;
-      }
-
-      nav ul {
-        display: none; /* simple mobile behaviour – only show cross-link pill */
       }
     }
   </style>
 </head>
 
 <body>
-  <!-- Header / Nav -->
+  <!-- HEADER / NAV -->
   <header>
     <div class="nav">
       <div class="nav-left">
-        <img src="leanline-logo.png"
-             alt="LeanLine Engineering logo"
-             class="nav-logo-img" />
-        <div>
-          <div class="logo"><span>LeanLine</span> Engineering</div>
-          <div class="tagline-small">
-            CNC Machining &amp; Precision Components for NSW Industry
+        <div class="nav-logo-block">
+          <img src="leanline-logo.png"
+               alt="LeanLine Hydraulics & Pneumatics logo"
+               class="nav-logo-image" />
+          <div class="nav-logo-text">
+            <div class="nav-logo-title"><span>LeanLine</span> Engineering</div>
+            <div class="nav-logo-tagline">
+              CNC Machining &amp; Precision Components for NSW Industry
+            </div>
           </div>
         </div>
       </div>
@@ -549,7 +571,7 @@
     </div>
   </header>
 
-  <!-- Hero -->
+  <!-- HERO -->
   <main id="home">
     <section class="hero">
       <div class="container hero-inner">
@@ -559,8 +581,9 @@
           </h1>
           <p class="hero-subtitle">
             LeanLine Engineering supplies high-quality CNC-machined components,
-            with options for anodising, passivation and other surface treatments,
-            delivered to you through a trusted overseas manufacturing partner.
+            with options for anodising, passivation and other surface
+            treatments, delivered to you through a trusted overseas
+            manufacturing partner.
           </p>
 
           <div class="hero-badges">
@@ -578,9 +601,9 @@
           </div>
 
           <p class="hero-note">
-            Send us a drawing, STEP file or photo with key dimensions. We’ll help
-            refine the design for machining, confirm tolerances and include any
-            required surface treatments in your quote.
+            Send us a drawing, STEP file or photo with key dimensions. We’ll
+            help refine the design for machining, confirm tolerances and include
+            any required surface treatments in your quote.
           </p>
         </div>
 
@@ -608,12 +631,14 @@
       </div>
     </section>
 
-    <!-- Capabilities -->
+    <!-- CAPABILITIES -->
     <section id="capabilities">
       <div class="container">
         <div class="section-header">
           <div class="section-label">Capabilities</div>
-          <h2 class="section-title">CNC Machining for Prototype &amp; Low-Volume Production</h2>
+          <h2 class="section-title">
+            CNC Machining for Prototype &amp; Low-Volume Production
+          </h2>
           <p class="section-subtitle">
             Through our manufacturing partner we have access to modern CNC
             milling and turning centres suitable for prototypes, jigs and
@@ -629,7 +654,7 @@
               features. Ideal for housings, brackets, manifolds and covers.
             </p>
             <ul>
-              <li>High-precision machining on modern vertical and 5-axis mills</li>
+              <li>High-precision machining on vertical and 5-axis mills</li>
               <li>Suitable for aluminium, steels, copper alloys and plastics</li>
               <li>Good for prototypes, jigs and low-volume batches</li>
               <li>Machined directly from your 3D model and drawings</li>
@@ -667,12 +692,14 @@
       </div>
     </section>
 
-    <!-- Materials & Tolerances -->
+    <!-- MATERIALS & TOLERANCES -->
     <section id="materials">
       <div class="container">
         <div class="section-header">
           <div class="section-label">Materials &amp; Tolerances</div>
-          <h2 class="section-title">Industrial Materials with Tight, Practical Tolerances</h2>
+          <h2 class="section-title">
+            Industrial Materials with Tight, Practical Tolerances
+          </h2>
           <p class="section-subtitle">
             Material choice and tolerancing are key to parts that fit, seal and
             last. LeanLine Engineering can help select from common engineering
@@ -769,7 +796,10 @@
               <tr>
                 <td>Stainless Steel 304 / 316</td>
                 <td>As machined or passivated</td>
-                <td>Process fittings, food/chemical parts, hardware exposed to weather</td>
+                <td>
+                  Process fittings, food/chemical parts, hardware exposed to
+                  weather
+                </td>
                 <td>Approx. 4–6 weeks from order</td>
               </tr>
               <tr>
@@ -779,27 +809,33 @@
                 <td>Approx. 3–5 weeks from order</td>
               </tr>
               <tr>
-                <td>Engineering Plastics (e.g. nylon, PEEK, PC)</td>
+                <td>Engineering Plastics (nylon, PEEK, PC)</td>
                 <td>As machined</td>
-                <td>Wear strips, insulators, light-duty housings, prototype components</td>
+                <td>
+                  Wear strips, insulators, light-duty housings, prototype
+                  components
+                </td>
                 <td>Approx. 3–5 weeks from order</td>
               </tr>
             </tbody>
           </table>
           <p class="helper-text">
-            *Lead times are indicative only and depend on part complexity, quantity,
-            finishing and freight. We’ll confirm actual lead times with every quote.
+            *Lead times are indicative only and depend on part complexity,
+            quantity, finishing and freight. We’ll confirm actual lead times
+            with every quote.
           </p>
         </div>
       </div>
     </section>
 
-    <!-- Surface Finishing -->
+    <!-- SURFACE TREATMENTS -->
     <section id="finishing">
       <div class="container">
         <div class="section-header">
           <div class="section-label">Surface Treatments</div>
-          <h2 class="section-title">Finishing Options for Corrosion Protection &amp; Appearance</h2>
+          <h2 class="section-title">
+            Finishing Options for Corrosion Protection &amp; Appearance
+          </h2>
           <p class="section-subtitle">
             Parts can be supplied “as machined” or with a range of finishing
             processes to improve corrosion resistance, wear life and appearance.
@@ -816,7 +852,7 @@
             <ul>
               <li>Decorative and hard anodising in a range of colours</li>
               <li>Passivation of stainless steels to boost corrosion resistance</li>
-              <li>Suitable for covers, brackets, manifolds and decorative parts</li>
+              <li>Ideal for covers, brackets, manifolds and decorative parts</li>
             </ul>
           </article>
 
@@ -849,7 +885,7 @@
       </div>
     </section>
 
-    <!-- How We Work -->
+    <!-- HOW WE WORK -->
     <section id="process">
       <div class="container">
         <div class="section-header">
@@ -905,7 +941,7 @@
       </div>
     </section>
 
-    <!-- Next Steps -->
+    <!-- NEXT STEPS -->
     <section id="next-steps">
       <div class="container">
         <div class="section-header">
@@ -955,18 +991,19 @@
       </div>
     </section>
 
-    <!-- Warranty & Returns -->
+    <!-- WARRANTY / RETURNS -->
     <section id="warranty">
       <div class="container">
         <div class="section-header">
           <div class="section-label">Warranty &amp; Returns</div>
-          <h2 class="section-title">Summary of Warranty &amp; Return Policy for Machined Parts</h2>
+          <h2 class="section-title">
+            Summary of Warranty &amp; Return Policy for Machined Parts
+          </h2>
           <p class="section-subtitle">
             Custom-machined parts are made specifically to your drawings and
             specifications. The policy below is a plain-language summary of how
             LeanLine Engineering handles issues with workmanship. It is not
-            formal legal advice – you should adapt and confirm the final wording
-            with your own advisor before publishing terms and conditions.
+            formal legal advice – have your own advisor review final wording.
           </p>
         </div>
 
@@ -981,7 +1018,7 @@
               </li>
               <li>
                 <strong>Duration.</strong> The warranty applies for
-                <em>12 months from the date of delivery</em> for defects in
+                <em> 12 months from the date of delivery </em> for defects in
                 workmanship or material that existed at the time of supply.
               </li>
               <li>
@@ -1018,9 +1055,9 @@
               <li>
                 <strong>Notifying an issue.</strong> If you believe there is a
                 problem with workmanship, notify us within
-                <em>7–14 days of delivery</em> (set your preferred timeframe)
-                with photos, a description of the problem and the
-                relevant drawings.
+                <em> 7–14 days of delivery </em> (set your preferred timeframe)
+                with photos, a description of the problem and the relevant
+                drawings.
               </li>
               <li>
                 <strong>Inspection process.</strong> We may request that parts
@@ -1045,14 +1082,13 @@
 
         <p class="policy-note">
           This section is a practical summary only and does not replace formal
-          terms and conditions of sale. Before you rely on it, have a qualified
-          professional review and tailor the wording for your business and
-          jurisdiction.
+          terms and conditions of sale. Have a qualified professional review and
+          tailor the wording for your business and jurisdiction.
         </p>
       </div>
     </section>
 
-    <!-- Contact -->
+    <!-- CONTACT -->
     <section id="contact">
       <div class="container">
         <div class="section-header">
@@ -1091,8 +1127,12 @@
 
               <div>
                 <label for="details">Project details</label>
-                <textarea id="details" name="details" required
-                  placeholder="Material, quantity, key dimensions, tolerances, surface treatment, required delivery date..."></textarea>
+                <textarea
+                  id="details"
+                  name="details"
+                  required
+                  placeholder="Material, quantity, key dimensions, tolerances, surface treatment, required delivery date..."
+                ></textarea>
                 <p class="helper-text">
                   Attach or reference any drawings or 3D models when you reply
                   to our quote email.
@@ -1116,7 +1156,10 @@
             <ul>
               <li><strong>Email:</strong> leanlinehydraulics@gmail.com</li>
               <li><strong>Location:</strong> Randwick, NSW, Australia</li>
-              <li><strong>Service area:</strong> Workshops, OEMs and projects across NSW</li>
+              <li>
+                <strong>Service area:</strong> Workshops, OEMs and projects
+                across NSW
+              </li>
             </ul>
           </div>
         </div>
