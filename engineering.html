@@ -71,8 +71,15 @@
 
     .nav-left {
       display: flex;
-      flex-direction: column;
-      gap: 2px;
+      flex-direction: row;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .nav-logo-img {
+      width: 80px;
+      height: auto;
+      display: block;
     }
 
     .logo {
@@ -101,7 +108,7 @@
     nav ul {
       list-style: none;
       display: flex;
-      flex-wrap: wrap;            /* key change: allow nav links to wrap */
+      flex-wrap: wrap;            /* allow nav links to wrap */
       gap: 10px 16px;
       font-size: 0.9rem;
     }
@@ -508,9 +515,14 @@
   <header>
     <div class="nav">
       <div class="nav-left">
-        <div class="logo"><span>LeanLine</span> Engineering</div>
-        <div class="tagline-small">
-          CNC Machining &amp; Precision Components for NSW Industry
+        <img src="leanline-logo.png"
+             alt="LeanLine Engineering logo"
+             class="nav-logo-img" />
+        <div>
+          <div class="logo"><span>LeanLine</span> Engineering</div>
+          <div class="tagline-small">
+            CNC Machining &amp; Precision Components for NSW Industry
+          </div>
         </div>
       </div>
 
