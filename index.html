@@ -60,16 +60,34 @@
 
     .nav {
       display: flex;
-      flex-wrap: wrap;
+      flex-wrap: wrap;        /* can wrap on small screens */
       align-items: center;
       justify-content: space-between;
-      padding: 10px 16px;
+      padding: 6px 16px;
       max-width: var(--max-width);
       margin: 0 auto;
-      gap: 12px;
+      gap: 10px;
     }
 
     .nav-left {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .nav-logo-img {
+      width: 220px;
+      height: auto;
+      display: block;
+    }
+
+    .nav-logo-text {
       display: flex;
       flex-direction: column;
       gap: 2px;
@@ -77,9 +95,10 @@
 
     .logo {
       font-weight: 700;
-      font-size: 1.05rem;
+      font-size: 0.95rem;
       color: #f9fafb;
       letter-spacing: 0.03em;
+      white-space: nowrap;    /* keep on one line */
     }
 
     .logo span {
@@ -89,6 +108,7 @@
     .tagline-small {
       font-size: 0.7rem;
       color: #9ca3af;
+      display: none;          /* hidden on desktop to reduce header height */
     }
 
     .nav-right {
@@ -143,7 +163,7 @@
     .hero {
       background: radial-gradient(circle at top left, #1d4ed8 0, #0f172a 45%, #020617 100%);
       color: #e5e7eb;
-      padding: 40px 0 50px;
+      padding: 32px 0 50px;
     }
 
     .hero-inner {
@@ -389,7 +409,7 @@
 
     .product-image-wrap {
       width: 100%;
-      background: #ffffff;              /* <- white background */
+      background: #ffffff;
       padding: 10px;
       display: flex;
       align-items: center;
@@ -404,7 +424,6 @@
       display: block;
     }
 
-    /* Rotate the hose image to sit more horizontally */
     .product-image--hose {
       transform: rotate(90deg);
       transform-origin: center;
@@ -454,7 +473,6 @@
       gap: 12px;
     }
 
-    /* Thumbnail box for pneumatics images */
     .pneu-media-thumb {
       width: 96px;
       height: 96px;
@@ -549,15 +567,30 @@
       align-items: center;
     }
 
-    @media (max-width: 900px) {
+    /* Desktop: keep nav in one line to use space better */
+    @media (min-width: 900px) {
+      .nav {
+        flex-wrap: nowrap;
+      }
+      .nav-left {
+        flex: 1 1 auto;
+      }
+      .nav-right {
+        flex: 0 0 auto;
+      }
+    }
+
+    /* Mobile tweaks – show tagline under logo when screen is narrow */
+    @media (max-width: 600px) {
+      .tagline-small {
+        display: block;
+      }
+      .nav-logo-img {
+        width: 180px;
+      }
       .hero-inner {
         grid-template-columns: minmax(0, 1fr);
       }
-
-      .nav {
-        justify-content: space-between;
-      }
-
       nav ul {
         display: none;
       }
@@ -570,11 +603,19 @@
   <header>
     <div class="nav">
       <div class="nav-left">
-        <div class="logo">
-          <span>LeanLine</span> Hydraulics &amp; Pneumatics
-        </div>
-        <div class="tagline-small">
-          Low-Cost Hydraulic &amp; Pneumatic Components for NSW Industry
+        <div class="nav-logo">
+          <!-- Make sure this filename matches the logo file in your repo -->
+          <img src="leanline-logo.png"
+               alt="LeanLine Hydraulics & Pneumatics logo"
+               class="nav-logo-img" />
+          <div class="nav-logo-text">
+            <div class="logo">
+              <span>LeanLine</span> Hydraulics &amp; Pneumatics
+            </div>
+            <div class="tagline-small">
+              Low-Cost Hydraulic &amp; Pneumatic Components for NSW Industry
+            </div>
+          </div>
         </div>
       </div>
 
